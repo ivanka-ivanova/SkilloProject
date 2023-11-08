@@ -2,7 +2,11 @@
 <suite name="First Suit" verbose="1" >
     <test name="Smoke Tests">
         <classes>
-            <class name="Tests.New"/>
+            <class name="Project.Tests.LoginTest"/>
+            <class name="Project.Tests.CommentPostTest"/>
+            <class name="Project.Tests.CreateNewPostTest"/>
+            <class name="Project.Tests.EditUser"/>
+            <class name="Project.Tests.SearchTest"/>
         </classes>
     </test>
 </suite>

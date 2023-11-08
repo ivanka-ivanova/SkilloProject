@@ -20,17 +20,8 @@ public class CommentPostTest extends BaseTest {
     HeaderPage headerpage = new HeaderPage(driver);
     headerpage.getAllPosts();
     headerpage.openFirstPost(0);
-   headerpage.getAllComments();
-   System.out.println(headerpage.getAllComments());
-    /*headerpage.getAllComments();
-    int existingComments = headerpage.getAllComments();
-    System.out.println(existingComments);
     headerpage.addComment("Comment a post");
-    int allComments = existingComments + 1;
-    int allCommentsAfter = headerpage.getAllComments();
-    Assert.assertEquals(allComments == allCommentsAfter, "The count of comments doesn't match");
     System.out.println("2. A comment has been successfully posted");
-
-     */
+    
 }
 }

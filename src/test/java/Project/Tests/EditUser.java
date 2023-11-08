@@ -32,8 +32,17 @@ public class EditUser extends BaseTest {
         profile.clickUserNameField();
         profile.checkUserName();
         profile.clickEmailField();
-
-
+        profile.checkEmail();
+        profile.checkPassword();
+        profile.checkConfirmPassword();
+        profile.checkConfirmPassword();
+        profile.clickPublicInfoField();
+        profile.editPublicInfoField("The edit is working");
+        profile.checkPublicInfo();
+        profile.clickSaveButton();
+        profile.clickEditButton();
+        profile.checkNewAmendment();
+        System.out.println("6. The profile has been amended");
     }
 
 }

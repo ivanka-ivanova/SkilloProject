@@ -85,26 +85,21 @@ public class ProfilePage extends BasePage {
     }
 
     public void clickUserNameField(){
-        wait.until(ExpectedConditions.visibilityOf(userNameField));
         clickElement(userNameField);
     }
 
     public void clickEmailField(){
-        wait.until(ExpectedConditions.visibilityOf(emailField));
         clickElement(emailField);
     }
     public void clickPasswordField(){
-        wait.until(ExpectedConditions.visibilityOf(passwordField));
         clickElement(passwordField);
     }
 
     public void clickConfirmPasswordField(){
-        wait.until(ExpectedConditions.visibilityOf(confirmPasswordField));
         clickElement(confirmPasswordField);
     }
 
     public void clickPublicInfoField(){
-        wait.until(ExpectedConditions.visibilityOf(publicInfoField));
         clickElement(publicInfoField);
     }
 
@@ -121,10 +116,17 @@ public class ProfilePage extends BasePage {
 
     public void checkValidation(WebElement element){
         String classAttribute = element.getAttribute("class");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(classAttribute.contains("id-valid"), "Not valid input");
+        softAssert.assertAll();
+
     }
 
     public void checkUserName(){
         checkValidation(userNameField);
+    }
+    public void checkEmail(){
+        checkValidation(emailField);
     }
     public void checkPassword(){
         checkValidation(passwordField);
@@ -136,6 +138,29 @@ public class ProfilePage extends BasePage {
 
     public void checkPublicInfo(){
         checkValidation(publicInfoField);
+    }
+
+    public void editPublicInfoField (String text){
+        publicInfoField.sendKeys(text);
+    }
+    public void editUser(String text){
+        userNameField.sendKeys(text);
+    }
+    public void editEmail(String text){
+        emailField.sendKeys(text);
+    }
+    public void editPassword(String text){
+        passwordField.sendKeys(text);
+    }
+    public void editConfirmPassword(String text){
+        confirmPasswordField.sendKeys(text);
+    }
+
+    public void checkNewAmendment(){
+        String newInfo = "The edit is working";
+        String postInfo = publicInfoField.getText();
+        Assert.assertEquals(newInfo, postInfo, "The new info is not saved");
+
     }
 }
 
